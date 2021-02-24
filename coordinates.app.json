@@ -1,0 +1,56 @@
+{
+    "info": {
+        "name": "coordinates",
+        "version": "1.0.0",
+        "category": "coordinates",
+        "keywords": ["coordinates"],
+        "homepage": "https://answer.bogonets.com/",
+        "bugs": "https://answer.bogonets.com/",
+        "license": "Bogonet License",
+        "author": "zer0",
+        "dependencies": [
+            {"type": "pip", "src": "numpy"},
+            {"type": "pip", "src": "opencv-python"}
+        ],
+        "engines": ">=1.0.2",
+        "environment": {
+            "type": "pyenv",
+            "name": "cv2"
+        },
+        "titles": {
+            "en": "Coordinates",
+            "ko": "Coordinates"
+        },
+        "descriptions": {
+            "en": "apply the Coordinate system",
+            "ko": "좌표계를 변환한다."
+        },
+        "documentation_mime": "text",
+        "documentations": {},
+        "meta": {}
+    },
+    "controls": {
+        "input": ["image", "bbox"],
+        "output": "box"
+    },
+    "props": [
+        {
+            "rule": "read_and_write",
+            "name": "coordinates",
+            "default_value": "absolute_to_ratio",
+            "type": "str",
+            "required": true,
+            "valid": {
+                "list": "ratio_to_absolute;absolute_to_ratio"
+            },
+            "title": {
+                "en": "Coordinates",
+                "ko": "변환좌표계"
+            },
+            "help": {
+                "en": "Coordinate system to be applied. (ratio: 0.0 ~ 1.0, absolute: pixel)",
+                "ko": "변환 할 좌표계. (ratio: 0.0 ~ 1.0, absolute: pixel)"
+            }
+        }
+    ]
+}
